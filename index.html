@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Page Title</title>
+
+    </head>
+
+    <body>
+
+        <h1>hi</h1>
+
+        <button onclick="fun()">click</button>
+
+        
+
+        <script>
+
+            function fun() {
+
+         var string = document.getElementsByTagName('html')[0].innerHTML;
+
+         
+
+    var textarea = document.createElement('textarea');
+
+textarea.id = 'temp_element';
+
+textarea.style.height = 0;
+
+document.body.appendChild(textarea);
+
+textarea.value = string;
+
+var selector = document.querySelector('#temp_element');
+
+  
+
+    selector.select();
+
+    document.execCommand("copy");
+
+    alert("Copied!");
+
+    document.body.removeChild(textarea)  
+
+}
+
+        </script>
+
+    </body>
+
+</html>
